@@ -16,4 +16,4 @@ def test_overview():
 
 def test_ngo_contacts():
 	observed = h.ngo_contacts(source_html)
-	n.assert_equal(observed, expected['contacts']['ngo'])
+	n.assert_list_equal(list(observed), expected['contacts']['ngo'])

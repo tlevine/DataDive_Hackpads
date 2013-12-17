@@ -1,7 +1,10 @@
 {
 	"overview":"This project seeks to refine the current GeoCoding application used my the Mayor's Office of Data Analytics. This GeoCoder transforms New York City addresses into a readable form and adds other spatial identifiers such as BIN, BBL, and X,Y coordinates to the input dataset. This GeoCoder is central to daily life for the City of New York and refining this program adds tremendous value to daily operations. Helping achieve a perfect and functional GeoCoder will not only be fun but will also have a profound positive impact on the city we all love so much.",
 	"contacts":{
-		"ngo":[{"name":"","position":"","email address":""}],
+		"ngo":[
+			{"name":"Sohaib Hasan","position":"MODA","email address":"shasan2@cityhall.nyc.gov"},
+			{"name":"Aida Shoydokova","position":"MODA","email address":"analytics1@cityhall.nyc.gov"}
+		],
 		"ambassadors":[],
 		"volunteers":[]
 	},

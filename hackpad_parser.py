@@ -15,36 +15,15 @@ def parse(filename):
 	}
 
 def ngo_contacts(html):
-	'''
-	<h2>
-   Contacts
-  </h2>
-  <p>
-   <b>
-    NGO Representatives
-   </b>
-  </p>
-  <ul>
-   <li>
-    Sohaib Hasan, MODA, shasan2@cityhall.nyc.gov
-   </li>
-   <li>
-    Aida Shoydokova, MODA, analytics1@cityhall.nyc.gov
-   </li>
-  </ul>
-  <p>
-   <b>
-    Data Ambassadors
-   </b>
-  </p>
-  <ul>
-	'''
 	contacts = '//h2[contains(text(),"Contacts")]'
 	ngo = '/following-sibling::p[b[contains(text(),"NGO Representatives")]]'
 	people = '/following-sibling::ul[position()=1]/li/text()'
-	print 88
-	print html.xpath(contacts + ngo + people)
-	return unidecode('')
+	
+	people_text = html.xpath(contacts + ngo + people)
+	keys = ['name','position','email']
+	for t in people_text:
+		values = [part.strip() for part in t.split(',')]
+		yield dict(zip(keys,values))
 
 if __name__ == '__main__':
 	import json
