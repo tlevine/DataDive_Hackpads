@@ -20,7 +20,7 @@ def ngo_contacts(html):
 	people = '/following-sibling::ul[position()=1]/li/text()'
 	
 	people_text = html.xpath(contacts + ngo + people)
-	keys = ['name','position','email']
+	keys = ['name','position','email address']
 	for t in people_text:
 		values = [part.strip() for part in t.split(',')]
 		yield dict(zip(keys,values))
