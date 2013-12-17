@@ -1,0 +1,2359 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="340" name="version"/>
+  <style>
+   body {font-family:Helvetica}ul.comment{list-style-image:url('https://hackpad.com/static/img/comment.png');} ul.task{list-style-image:url('https://hackpad.com/static/img/unchecked.png');}ul.taskdone{list-style-image:url('https://hackpad.com/static/img/checked.png');}
+  </style>
+  <title>
+   /4219$5nsaXEL0jOv
+  </title>
+ </head>
+ <body>
+  <h2>
+   MODA: Streamlining the Citizen Data Pipeline (DK)
+  </h2>
+  <p>
+   <img src="https://hackpad-attachments.s3.amazonaws.com/hackpad.com_0EILyEuUj1j_p.84285_1384541635326_undefined"/>
+  </p>
+  <h2>
+   Overview
+  </h2>
+  <p>
+   This project seeks to refine the current GeoCoding application used my the Mayor’s Office of Data Analytics. This GeoCoder transforms New York City addresses into a readable form and adds other spatial identifiers such as BIN, BBL, and X,Y coordinates to the input dataset. This GeoCoder is central to daily life for the City of New York and refining this program adds tremendous value to daily operations. Helping achieve a perfect and functional GeoCoder will not only be fun but will also have a profound positive impact on the city we all love so much.
+  </p>
+  <p>
+  </p>
+  <h2>
+   Contacts
+  </h2>
+  <p>
+   <b>
+    NGO Representatives
+   </b>
+  </p>
+  <ul>
+   <li>
+    Sohaib Hasan, MODA, shasan2@cityhall.nyc.gov
+   </li>
+   <li>
+    Aida Shoydokova, MODA, analytics1@cityhall.nyc.gov
+   </li>
+  </ul>
+  <p>
+   <b>
+    Data Ambassadors
+   </b>
+  </p>
+  <ul>
+   <li>
+    Tim Rich, T-Analytics,
+   </li>
+   <li>
+    Vlad Dubovskiy, DonorsChoose.org, vlad@donorschoose.org,
+   </li>
+   <li>
+    Peter Darche, DataKind,
+   </li>
+  </ul>
+  <p>
+   <b>
+    Volunteers
+   </b>
+  </p>
+  <ul>
+   <li>
+    Jeff Wenzinger, , Rocket Fuel, jeff.wenzinger@gmail.com
+   </li>
+   <li>
+    Gouivan, ,gnagubandi@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/BJiBXSx0QpR">
+    </a>
+    Mario Peart, ,mario.peart@gmail.com
+   </li>
+   <li>
+    Chen Xi, ,chenxi198908@gmail.com
+   </li>
+   <li>
+    Angela Wu, ,angelwu120@gmail.com
+   </li>
+   <li>
+    Yan Gran, ,yangran12@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/tpNa1ahbyKo">
+    </a>
+    Jim Steinberger, DonorsChoose.org, openbip@gmail.com
+   </li>
+   <li>
+    J. Cheng, ,jcheng289@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/mnlB3BYbWk3">
+    </a>
+    Casey Webb, Bridgewater Associates, caseytwebb@gmail.com
+   </li>
+   <li>
+    Shannon Lauricella, Bridgewater Associates, shannon.lauricella@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/uizjIfFGe2R">
+    </a>
+    Tommy Garcia, ,garciat29@gmail.com
+   </li>
+   <li>
+    Dave Anderson, Infosys, dave@dvndrsn.com
+   </li>
+   <li>
+    Lauran Epstein, Freelance consulting, lauran.epstein@zoho.com, lauran.praia@gmail.com,
+   </li>
+   <li>
+    Ian Bridgeforth, ,ibridgeforth@gmail.com
+   </li>
+   <li>
+    Ivan Zalamea, ,izalamea@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/uKEKSK0Qyzl">
+    </a>
+    Mikael Hveem, ,mikael@commune.io
+   </li>
+   <li>
+    Vivian Zhang, ,vivian.stanford@gmail.com
+   </li>
+   <li>
+    Britt Hogue, ,britt.s.hogue@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/A5l1rX3jncE">
+    </a>
+    Melanie Petsch, ,melanie@petschanalytics.com
+   </li>
+   <li>
+    Dan Gabrieli, New York City Government, daniel.gabrieli@gmail.com
+   </li>
+   <li>
+    <a href="https://nycdatadive2013.hackpad.com/ep/profile/sra4PwQmQ8D">
+    </a>
+    Lauran Epstein, Consulting, lauran.epstein@zoho.com
+   </li>
+  </ul>
+  <p>
+  </p>
+  <h2>
+   The Challenge(s)
+  </h2>
+  <p>
+   The GeoCoder is written in Java and seeks improvements in its quality of parsing street addresses and then joining parsed data with public datasets.
+  </p>
+  <ul>
+   <li>
+    Geocoding Queens addresses
+    <ul>
+     <li>
+      Dealing with large datasets
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <p>
+  </p>
+  <h2>
+   The Method(s)
+  </h2>
+  <p>
+   <b>
+    Task Queens Address Parser:
+   </b>
+  </p>
+  <p>
+   Unpack the GeoCoder and figure out how the address parsing works. Look through the failed Queens address parsing and find common errors. Devise a method of improving the Queens address parsing code. This could take the shape of creating a whole new parsing step for Queens addresses or refining the existing code to accommodate for Queens addresses.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Task Reference Data:
+   </b>
+  </p>
+  <p>
+   Examine existing reference data used to match and add spatial points to input addresses. Streamline the reference data code for PAD, Pluto, and CSCA dat sets. Incorporate the USPS Melissa dataset into the reference data. Instrument auto data refresh that checks if underlying datasets on respective city departments websites have been updated and pulls changes in.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Task Bug Squishing:
+   </b>
+  </p>
+  <p>
+   There is a bug when inputting datasets that have 60+ columns which causes the GeoCoder to crash. Find it, squish it.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Task A Simple GUI, or Not:
+   </b>
+  </p>
+  <p>
+   The GeoCoder is current run at the command line. Develop a very simple interface (it does not have to be GUI) for inputting data. This interface would allow the user to select which of their input data columns is the address field and then starts the process. Attach this GUI to the GeoCoder and test to make sure it works.
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <h2>
+   DataSets
+  </h2>
+  <p>
+   <b>
+    Geocoder
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/s/vcdu9fci16dutki/Geocoder.zip">
+   </a>
+   <a href="https://www.dropbox.com/s/vcdu9fci16dutki/Geocoder.zip">
+   </a>
+   https://www.dropbox.com/s/vcdu9fci16dutki/Geocoder.zip
+  </p>
+  <p>
+   Code and SAS wrapper for this glorious .jar application
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    All Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/laa9113vkz28kph/yk_yQb59UG">
+   </a>
+   <a href="https://www.dropbox.com/sh/laa9113vkz28kph/yk_yQb59UG">
+   </a>
+   https://www.dropbox.com/sh/laa9113vkz28kph/yk_yQb59UG
+  </p>
+  <p>
+   Or just download specific datasets below:
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 1 - Pluto
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/wvehetahwgxf524/P92Qn9IfQo">
+   </a>
+   <a href="https://www.dropbox.com/sh/wvehetahwgxf524/P92Qn9IfQo">
+   </a>
+   https://www.dropbox.com/sh/
+   <a href="https://www.dropbox.com/sh/wvehetahwgxf524/P92Qn9IfQo">
+   </a>
+   wvehetahwgxf524/P92Qn9IfQo
+  </p>
+  <p>
+   Pluto dataset from the Dpt of Finance
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 2 - PAD
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/gfntna1h8eehc7u/cL0ATalv6r">
+   </a>
+   <a href="https://www.dropbox.com/sh/gfntna1h8eehc7u/cL0ATalv6r">
+   </a>
+   https://www.dropbox.com/sh/
+   <a href="https://www.dropbox.com/sh/gfntna1h8eehc7u/cL0ATalv6r">
+   </a>
+   gfntna1h8eehc7u/cL0ATalv6r
+  </p>
+  <p>
+   PAD dataset from the Dpt of Planning
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 3 - Melissa
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/ycr8ry058v9w3bs/3Y-nhOfXNI">
+   </a>
+   <a href="https://www.dropbox.com/sh/ycr8ry058v9w3bs/3Y-nhOfXNI">
+   </a>
+   https://www.dropbox.com/sh/
+   <a href="https://www.dropbox.com/sh/ycr8ry058v9w3bs/3Y-nhOfXNI">
+   </a>
+   ycr8ry058v9w3bs/3Y-nhOfXNI
+  </p>
+  <p>
+   USPS comprehensive list of all NYC addresses
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 4 - Reference Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/8o19t8qmxegx8vj/Oq1P65QmjN">
+   </a>
+   <a href="https://www.dropbox.com/sh/8o19t8qmxegx8vj/Oq1P65QmjN">
+   </a>
+   https://www.dropbox.com/sh/
+   <a href="https://www.dropbox.com/sh/8o19t8qmxegx8vj/Oq1P65QmjN">
+   </a>
+   8o19t8qmxegx8vj/Oq1P65QmjN
+  </p>
+  <p>
+   Temporary reference data to use while working on GeoCoder so other group can work on the Reference Data aspect of the project.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 5 - Test Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/ip979mfr8nt725l/scliU6YOIw">
+   </a>
+   <a href="https://www.dropbox.com/sh/ip979mfr8nt725l/scliU6YOIw">
+   </a>
+   https://www.dropbox.com/sh/
+   <a href="https://www.dropbox.com/sh/ip979mfr8nt725l/scliU6YOIw">
+   </a>
+   ip979mfr8nt725l/scliU6YOIw
+  </p>
+  <p>
+   Bad (failed) addresses from the existing GeoCoder
+  </p>
+  <p>
+   Good (successful) addresses from the existing GeoCoder
+  </p>
+  <p>
+   Test Data Intersections for testing purposes.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 6 - Failed Queens Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/s/osnrnhnzp4qlyay/bad_queens.csv">
+   </a>
+   <a href="https://www.dropbox.com/s/osnrnhnzp4qlyay/bad_queens.csv">
+   </a>
+   https://www.dropbox.com/s/osnrnhnzp4qlyay/bad_queens.csv
+  </p>
+  <p>
+   Bad queens addresses.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 7 - Failed NYC Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/s/3wyqkqt1gfqc78k/bad_nyc.csv">
+   </a>
+   <a href="https://www.dropbox.com/s/3wyqkqt1gfqc78k/bad_nyc.csv">
+   </a>
+   https://www.dropbox.com/s/3wyqkqt1gfqc78k/bad_nyc.csv
+  </p>
+  <p>
+   Bad NYC (Non-Queens) data
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 8 - SaS geo Coder
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/s/3glxspa32kay8hd/geo.7z">
+   </a>
+   <a href="https://www.dropbox.com/s/3glxspa32kay8hd/geo.7z">
+   </a>
+   https://www.dropbox.com/s/3glxspa32kay8hd/geo.7z
+  </p>
+  <p>
+   This is a SAS GeoCoder for use in working with the SAS wrapper...
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 9 - Refined Bad Queens Data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/s/m28nlcc3l6vcwxs/badQueensSummary.xlsx">
+   </a>
+   <a href="https://www.dropbox.com/s/m28nlcc3l6vcwxs/badQueensSummary.xlsx">
+   </a>
+   https://www.dropbox.com/s/m28nlcc3l6vcwxs/badQueensSummary.xlsx
+  </p>
+  <p>
+   This is the Bad queens data that has be reordered and refined by Jeff. If you want to do any work or analysis on the Bad Queens data this would be a good place to start.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 10 - SAS files
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/kt3a4h27akd3v5h/iaEkWxr_S6">
+   </a>
+   <a href="https://www.dropbox.com/sh/kt3a4h27akd3v5h/iaEkWxr_S6">
+   </a>
+   https://www.dropbox.com/sh/kt3a4h27akd3v5h/iaEkWxr_S6
+  </p>
+  <p>
+   These are all the new SAS files see the documentation below for descriptions and whatnot.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Dataset 11 - Updated Reference data
+   </b>
+  </p>
+  <p>
+   <a href="https://www.dropbox.com/sh/x3k6tkpl3ezlize/WVMqg_l7x_">
+   </a>
+   <a href="https://www.dropbox.com/sh/x3k6tkpl3ezlize/WVMqg_l7x_">
+   </a>
+   https://www.dropbox.com/sh/x3k6tkpl3ezlize/WVMqg_l7x_
+  </p>
+  <p>
+   This is the updated reference data that was worked on but not quite done. Check it out for important improvements.
+  </p>
+  <p>
+  </p>
+  <h2>
+   Code
+  </h2>
+  <p>
+   <b>
+    GitHub Repository
+   </b>
+  </p>
+  <p>
+   <a href="https://github.com/datakind/moda">
+   </a>
+   <a href="https://github.com/datakind/moda">
+   </a>
+   https://github.com/datakind/moda
+  </p>
+  <p>
+  </p>
+  <h2>
+   Tool Collection
+  </h2>
+  <p>
+   <b>
+    Running The Geocoder
+   </b>
+  </p>
+  <p>
+  </p>
+  <p>
+   brew update
+  </p>
+  <p>
+   brew install ant
+  </p>
+  <p>
+   Clone from
+   <a href="https://github.com/datakind/moda">
+   </a>
+   <a href="https://github.com/datakind/moda">
+   </a>
+   https://github.com/datakind/moda
+  </p>
+  <p>
+   NOTE: the reference CSV files are /not/ in GitHub, so if you check the project out, remember to copy all CSV files from the JAR (both Geocoder and Parse directories)
+  </p>
+  <p>
+  </p>
+  <p>
+   To run from command-line:
+  </p>
+  <p>
+   1) Be in the root-directory of the folder (the folder that contains "Geocoder" and "Parser")
+  </p>
+  <p>
+   2) Type "ant" and hit ENTER -- (you’ll need to have Ant installed if you don’t) -- this will build the project.
+  </p>
+  <p>
+   3) java -Xmx1024m -classpath .:./lib/jcsv-1.4.0.jar Geocoder.Geocode
+  </p>
+  <p>
+  </p>
+  <p>
+   Running in one command line:
+  </p>
+  <p>
+   java -Xmx1024m -classpath .:./lib/jcsv-1.4.0.jar Geocoder.Geocode mel.csv mel_out.csv , address address Zip parsed_boro City
+  </p>
+  <p>
+  </p>
+  <p>
+   Use empty quotes for what you’re not specifying:
+  </p>
+  <p>
+   java -Xmx1024m Geocoder.Geocode melissa_5k.csv output , address address ’’ ’’ ’’
+  </p>
+  <p>
+  </p>
+  <p>
+   Running with interactive questions (longer and lamer):
+  </p>
+  <p>
+   java -Xmx1024m -classpath .:./lib/jcsv-1.4.0.jar Geocoder.Geocode
+  </p>
+  <p>
+  </p>
+  <p>
+   Or run the GUI:
+  </p>
+  <p>
+   java -Xmx1024m -classpath .:./lib/jcsv-1.4.0.jar Geocoder.GeocodeUI
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    SAS Wrapper Info
+   </b>
+  </p>
+  <p>
+  </p>
+  <p>
+   NOTE: in the SAS file: geocode_java_mlplocal.sas
+  </p>
+  <p>
+   the first line of the SAS code needs to have the location data updated for used in the MODA office. DONT FORGET!!
+  </p>
+  <p>
+  </p>
+  <p>
+   Also in the sas file where you see: "%*" indicates a something newly commented out. The logic was changed to also not overwrite the input.
+  </p>
+  <p>
+  </p>
+  <p>
+   Also Macro variable in the first section of the If clause can’t be tested on the volunteer’s computer. This has not been messed with but may need to be updated later on down the road.
+  </p>
+  <p>
+  </p>
+  <p>
+   IMPORTANT NEW SAS WRAPPER INFO
+  </p>
+  <p>
+   The output of the new SAS wrapper kicks an error message after reporting all the geocoding percentages that went down in the Java code. This error was unable to be removed but does not affect the running of either the Java or the SAS so please ignore.
+  </p>
+  <p>
+  </p>
+  <p>
+   NEXT STEP: -&gt; Notes on the GUI process &lt;-
+  </p>
+  <p>
+   Asside from removing the error in the SAS run program.
+  </p>
+  <p>
+   Someone should make a window that will popup and let the user choose their fields and all that (this is the GUI that we were talking about) Melanie said that this could be done in SAS and not need to make this in Java or GUI. The fields should be the parameter in the overall function which is called: Geocode_java you will see the eight fields that will be used as input for this.
+  </p>
+  <p>
+  </p>
+  <p>
+   Our SAS genius is
+   <a href="https://nycdatadive2013.hackpad.com/ep/profile/A5l1rX3jncE">
+   </a>
+   Melanie Petsch melanie@petschanalytics.com reach out to her for questions on the SAS wrapper and changes.  She made all the updates and awesome changes! Way to go!
+  </p>
+  <p>
+  </p>
+  <p>
+   Files in the Dropbox folder "SAS Files":
+  </p>
+  <p>
+   geocoder_macros.sas - the macros that are were existing from the original. Did not mess with this, but created own file to have a proper home.
+  </p>
+  <p>
+  </p>
+  <p>
+   geocaode_caller_mlplocal.sas - New overall program this is the "executable" that you would run from SAS. UPDATE THE FILE LOCATIONS FOR YOUR LOCAL OPERATIONS. VERY IMPORTANT!
+  </p>
+  <p>
+  </p>
+  <p>
+   geocode_java_mlplocal.sas - Is called by the caller it runs Java and "attempts" to do some error messaging. But most of the error messaging code was existing and error message in SAS existed and ran regularly.
+  </p>
+  <p>
+  </p>
+  <p>
+   geocode_caller_min_modifications.sas - the caller with only changing the locations. This is as close to the original sas wrapper before the data dive. Might not need to be used! For testing purposes.
+  </p>
+  <p>
+  </p>
+  <p>
+   geocode_java_min_modifications.sas - the java code with only changing locations. THIS OVERWRITES THE INPUT FILE AND SHOULD NOT BE USED! BAD FORM. This is as close to the original sas wrapper before the data dive. Might not need to be used! For testing purposes.
+  </p>
+  <p>
+  </p>
+  <p>
+   Before you attempt to run this! Make sure you can run the Java native in a command line window! If you can’t run java native this will not work! Be aware!
+  </p>
+  <p>
+  </p>
+  <h2>
+   Results!
+  </h2>
+  <p>
+   <b>
+    Current Status
+   </b>
+  </p>
+  <ul>
+   <li>
+    Now, Geocoder outputs a CSV file of all the addresses it failed on and why. In other words, if it’s not a 100% match, you’ll also get a CSV stunning CSV output with all "unmatched" rows for root cause analysis
+   </li>
+   <li>
+    We have created an auto-update script with email notification and update log! (thanks Vivian, Brit)
+    <a href="https://github.com/datakind/moda/tree/master/crawler_and_email">
+    </a>
+    <a href="https://github.com/datakind/moda/tree/master/crawler_and_email">
+    </a>
+    https://github.com/datakind/moda/tree/master/crawler_and_email
+   </li>
+   <li>
+    We fixed comma escapes to avoid data import issues. Reinstrumented with open source CSV parsing library. (thanks Jim).
+   </li>
+   <li>
+    Output of beautiful error log with any issues written into a log file
+   </li>
+   <li>
+    The SAS wrapper was updated so the original input file was not overwritten. It was also streamlined with unused code taken out. See notes above on the SAS files. (Thanks Melanie!)
+   </li>
+   <li>
+    Dirty Queens got down and dirty and nailed it. See the parsing model laid out above. (Thanks Shannon, Tommy and Casey!) This is some rock and roll stuff right here!
+   </li>
+   <li>
+    Provided a suggestion roadmap for upkeeping a reference data database for matches to be always compared to a fuller dataset.
+   </li>
+  </ul>
+  <p>
+  </p>
+  <p>
+   <b>
+    GeocodeUI
+   </b>
+  </p>
+  <p>
+  </p>
+  <p>
+   Here it is: GeocodeUI. This is the updated screenshot of the interface.
+  </p>
+  <p>
+  </p>
+  <p>
+   <img src="https://hackpad-attachments.s3.amazonaws.com/hackpad.com_0EILyEuUj1j_p.91344_1385328300167_undefined"/>
+  </p>
+  <p>
+  </p>
+  <p>
+   <s>
+    I believe UI in this case can stand only for Ugly Interface. I’m not proud of it, but it is bare bones and it works.
+   </s>
+   This is the updated GeocodeUI, an improvement over the first iteration. It is coded in Java Swing so it can theoretically be easily distributed with the Geocoder JAR file, but there are a few next steps required to make this a little more User friendly and a little less Ugly (done!).
+  </p>
+  <p>
+  </p>
+  <p>
+   (Jim) Be proud!  One particularly great thing about this is how it lends itself to repeated runs.  Once we get the error-log and unmatched-address log going, it’ll be a straightforward cycle of clicking "Start Geocoding", fixing any errors that come up, and then simply re-clicking "Start Geocoding".  If the log files can themselves be integrated into the GUI, it’d take a lot of the hackery-feeling from this processing.
+  </p>
+  <p>
+  </p>
+  <p>
+   Next steps:
+  </p>
+  <ul>
+   <li>
+    <s>
+     Integrate with revised branch of code (emailed code to Jim).
+    </s>
+   </li>
+   <li>
+    <s>
+     Please test the code a little My system is pretty bad, so I was getting out of memory exceptions while the Geocode process was running and I can’t increase the heap size any more. The UI seems to call Geocode just fine though.
+    </s>
+    <ul>
+     <li>
+      Works great with "-Xmx1024M" allocated to the process.
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <p>
+   Future improvements:
+  </p>
+  <p>
+  </p>
+  <ul>
+   <li>
+    <s>
+     Validate inputs - the Geocode class will fail gracefully as long as input file is specified correctly. However, ideally we should have the delimiter and building#/street specified as well.
+    </s>
+    [dave]This is completed. Validation is in place for the following:
+    <ul>
+     <li>
+      Excess white spaces in all input is trimmed from start/end of each field
+     </li>
+     <li>
+      Input file path must be a valid file
+      <b>
+       (implemented check for valid URL, but was not able to confirm if this is working correctly).
+      </b>
+     </li>
+     <li>
+      Output file path cannot be "temp.txt" as this file name is required by the Geocoder application
+     </li>
+     <li>
+      The default Input File Delimiter is comma (","). The Input File Delimiter can be at most 1 character long (per Jim’s code changes this is the longest it can be). You can choose to not have a delimiter, but in most cases, you probably won’t give proper output
+     </li>
+     <li>
+      Either Building Number Column or Street Name Column must be specified.
+     </li>
+     <li>
+      All other fields are optional.
+     </li>
+    </ul>
+   </li>
+   <li>
+    <s>
+     Package JAR for distrbution to other platforms. On Windows? Batch (.bat) file. Other solutions?
+     <a href="http://stackoverflow.com/questions/7720/packaging-java-apps-for-the-windows-linux-desktop">
+     </a>
+     Stack exchange knows.
+    </s>
+    [da] Prepared a .bat file (commited to
+    <a href="https://github.com/datakind/moda/blob/master/geocoder/Geocoder/RunGeocodeUI.bat">
+    </a>
+    github). Haven’t tested, but this needs to be in the root folder with the Geocoder.jar to execute.
+   </li>
+   <li>
+    <s>
+     File chooser - file chooser can be implemented in Java Swing using JFileChooser class. ActionListener can handle the output of this.
+     <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html">
+     </a>
+     Java tutorial
+    </s>
+    . [dave] This is completed.
+   </li>
+   <li>
+    <s>
+     An editable combo box to select columns from the input file. Need to parse column names from file after it is selected.
+     <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html">
+     </a>
+     Java tutorial. [dave]
+    </s>
+    This is completed.
+   </li>
+   <li>
+    <s>
+     JToolTip can be used to add tool tips to assist the user.
+     <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html">
+     </a>
+     Java tutorial.
+    </s>
+    [dave] Added help text to UI, rather than JToolTip.
+   </li>
+   <li>
+    <s>
+     Center window location on screen using setLocationRelativeTo(null).
+     <a href="http://www.codebeach.com/2008/02/center-dialog-box-frame-or-window-in.html">
+     </a>
+     Notes.
+    </s>
+    [dave] This is completed.
+   </li>
+   <li>
+    <s>
+     Improve layout using GridBagLayout rather than GridLayout manager (this is the recommended layout to use when not using a UI design tool).
+     <a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html">
+     </a>
+     Java tutorial.
+    </s>
+    [dave] This is completed.
+   </li>
+   <li>
+    [dave] These last few changes would require architecture changes in the Geocoder itself.
+    <ul>
+     <li>
+      Additional fields for the two new files we’re adding to the Geocoder:
+      <ul>
+       <li>
+        Error log
+       </li>
+       <li>
+        CSV of unmatched addresses
+       </li>
+      </ul>
+     </li>
+     <li>
+      Redirect console output to the UI to monitor errors and Geocode progress. Currently you need to monitor this at the system console. (this would require a big change in the Geocoder itself).
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <p>
+   <i>
+    (First of all, I want to thank everyone for your time and effort in tackling our most pressing problem!)
+   </i>
+  </p>
+  <p>
+   <s>
+    There is a problem with the output file: the variables that were in the input file are overwritten with variables names. So the output data looks now like this:
+   </s>
+  </p>
+  <table style="font-size:13px;cell-spacing: 0px; border-collapse: collapse;">
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     cum_arrival
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_house_number
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name2
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     x
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     y
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     bin
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     bbl
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     cum_arrival
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     cum_arrival
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     552
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     WEST
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1001845
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     246605.1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1063095
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1.02E+09
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     cum_arrival
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     262
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     VANBUREN STREET
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1001915
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     190939.4
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3043754
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3.02E+09
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+  </table>
+  <p>
+   Instead of:
+  </p>
+  <table style="font-size:13px;cell-spacing: 0px; border-collapse: collapse;">
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     cum_arrival
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_house_number
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name2
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     x
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     y
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     bin
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     bbl
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     552 W 173
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     8:19
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     552
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     WEST
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1001845
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     246605.1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1063095
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1.02E+09
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     262 VAN BUREN
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     33:14:00
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     262
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     VANBUREN STREET
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1001915
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     190939.4
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3043754
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3.02E+09
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+  </table>
+  <p>
+   <s>
+    Could somebody look at this?
+   </s>
+  </p>
+  <p>
+   <a href="https://nycdatadive2013.hackpad.com/ep/profile/nCY3OqGbarZ">
+   </a>
+   Aida Shoydokova, I found the bug causing the above; it’s fixed in GitHub.
+  </p>
+  <p>
+  </p>
+  <p>
+   One observation I noticed while looking at the above -- the Geocoder does the following:
+  </p>
+  <ol>
+   <li>
+    Uses the new CSVReader library to properly read in the input CSV file
+   </li>
+   <li>
+    Processes the input for matched geographic locations / feature names
+   </li>
+   <li>
+    Writes the output to "temp.txt"
+   </li>
+   <li>
+    Uses the old string-splitter to improperly read in the temp.txt CSV file
+   </li>
+   <li>
+    Processes the input for matched X-Y coordinates
+   </li>
+   <li>
+    Rinse and repeat with BIN
+   </li>
+   <li>
+    Rinse and repeat with BBL
+   </li>
+  </ol>
+  <p>
+   Because steps 4, 6, and 7 all use the legacy way of parsing the comma-separated lines, I worried the comma-issue might be presenting itself again at those times.  However, those steps are only reading in the first column (address_id) of the "temp.txt", and ignoring the rest of the line, so it’s actually not an issue.  They should be cleaned up at some point, but I don’t think they’re causing problems -- the fix mentioned above should be sufficient.
+  </p>
+  <p>
+   I tested the fixed code, so now the output file looks like this (the geocoder creates the 1st ’dummy’ raw, and all columns starting from Occur_Borough shifted to the left, the input was: housenum=Occur_Address, stname=Occur_Address, boro=Occur_Borough):
+  </p>
+  <table style="font-size:13px;cell-spacing: 0px; border-collapse: collapse;">
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     id
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     addressid
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     Occur_Address
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     Occur_Borough
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_house_number
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_feature_name2
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     parsed_boro
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     x
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     y
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     bin
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     Occur_Address,Occur_Borough
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     2
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     87931923001
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     879 BERGEN ST,BROOKLYN
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     879
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     BERGEN STREET
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     995843.21
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     186087.61
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3028025
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3011420087
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1.3723E+11
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     173RD ST &amp; AMSTERDAM AV,New York
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     WEST
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     AMSTERDAM AVENUE
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1002326
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     246396
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+   </tr>
+   <tr>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     4
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3.55024E+11
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3550 JEROME AVENUE,Bronx
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     3550
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     JEROME AVENUE
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     2
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     1017434.56
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     261386.14
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     2017792
+    </td>
+    <td class="added" style="border:1px solid #999; min-width: 50px;height: 22px;line-height: 16px;padding: 0 4px 0 4px;">
+     2033280025
+    </td>
+   </tr>
+  </table>
+  <p>
+   btw, comma-issue seems fixed: the input files with commas and without have the same outputs. So the fix above is sufficient!
+  </p>
+  <p>
+  </p>
+  <h2>
+   Final Presentation
+  </h2>
+  <p>
+  </p>
+  <p>
+  </p>
+  <h2>
+   Team Communication
+  </h2>
+  <p>
+   <b>
+    Questions and Answers
+   </b>
+  </p>
+  <p>
+   <i>
+    Please include any questions here for Ambassadors, the NGO, or the rest of the team.
+   </i>
+  </p>
+  <p>
+  </p>
+  <ul>
+   <li>
+    What is the meaning for each of the borough codes in the test data? I did some research (in reference file zip_to_boro.csv):
+    <ul>
+     <li>
+      1- manhattan
+     </li>
+     <li>
+      2- bronx
+     </li>
+     <li>
+      3- brooklyn
+     </li>
+     <li>
+      4- queens
+     </li>
+     <li>
+      5- staten island
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <p>
+   <b>
+    Thoughts and Ideas for Improvements
+   </b>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     Error Codes for Failed Addresses:
+    </b>
+   </li>
+  </undefined>
+  <p>
+   Perhaps this could be done as a step while matching the addresses. For example, one could have an error code for wrong state, wrong zip, etc.
+  </p>
+  <p>
+  </p>
+  <ul>
+   <li>
+    In the step that identifies if the input is an intersection or a house number have an error output if a "&amp;"
+   </li>
+   <li>
+    The geocoding algorithm lends itself to multi-threading; it could be extended in this way to take advantage of multiple CPUs and run substantially faster
+   </li>
+   <li>
+    The current algorithm might be loading the entirety of the relevant CSVs into memory -- if this were recoded to stream and process one line at a time, etc., then the process would no longer require increasing the maximum Java heap size past the default
+   </li>
+   <li>
+    Largest # of error codes in Bad NYC comes from No Street Name. Not far behind is Address Out of Range by More than 4
+   </li>
+   <li>
+    Largest # of error codes in Bad Queens comes from Address Out of Range by More than 4
+   </li>
+  </ul>
+  <ul>
+   <li>
+    Perhaps down the road a reformat the Java code into a table form. Load the reference initially into the tables perhaps use an ETL process to load up the reference data and use this for the
+   </li>
+  </ul>
+  <ul>
+   <li>
+    With the Queens failed addresses perhaps this is due to Queens has a 42 st, 42 rd, 42 ct, 42 ave, etc.... Need to think of methods of clarifying this.
+   </li>
+  </ul>
+  <ul>
+   <li>
+    Perhaps in the future all of the incoming data from outside agencies should not be in CSV because the commas can screw up the input. Rather using a different delimiter eg "|"
+   </li>
+  </ul>
+  <ul>
+   <li>
+    Down the road. Perhaps the best method of keeping the reference data up to date and easily accessible is to create a database of all the reference data and their respective data points.  While this would be a big suck of computing power to exhaustively search each of these entries, perhaps distributed computing could be used to increase speed.
+   </li>
+  </ul>
+  <p>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     GEOCODE_DISPOSITION Errors from bad_queens.csv
+    </b>
+   </li>
+  </undefined>
+  <p>
+   (Note: these errors are output from a different geocoder that we do not have access to.)
+  </p>
+  <p>
+   3061 (total)
+  </p>
+  <p>
+   1569 ADDRESS NUMBER OUT OF RANGE BY MORE THAN 4
+  </p>
+  <p>
+   749   NO STREETNAME
+  </p>
+  <p>
+   321   NO HOUSE NUMBER
+  </p>
+  <p>
+   220   SPELLCHECKED WITH NO CHANGE
+  </p>
+  <p>
+   158   STREET(S) NOT FOUND; NOT ELIGIBLE FOR SPELLCHECK
+  </p>
+  <p>
+   17     STREETS NOT LONG ENOUGH TO SPELLCHECK
+  </p>
+  <p>
+   14     STREETS DO NOT INTERSECT
+  </p>
+  <p>
+   13     (all other errors)
+  </p>
+  <p>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     Identified Patterns in Errors
+    </b>
+   </li>
+  </undefined>
+  <ul>
+   <li>
+    ADDRESS NUMBER OUT OF RANGE BY MORE THAN 4
+    <ul>
+     <li>
+      Address exists in a ZIP code other than the ZIP code listed
+      <ul>
+       <li>
+        Database: 3633 22nd St. 10016
+       </li>
+       <li>
+        Google Maps: 36-33 22nd St Astoria, NY 11106
+       </li>
+      </ul>
+     </li>
+     <li>
+      Address does not exist in any ZIP (actual error)
+     </li>
+     <li>
+      Possible other errors:
+      <ul>
+       <li>
+        Hyphenation parsing?
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li>
+    NO HOUSE NUMBER
+    <ul>
+     <li>
+      PO BOX error: does not begin with house number; is not a street. (e.g. PO BOX 140250)
+     </li>
+     <li>
+      "Prominent place in lieu of address" errors (e.g. "JFK INTERNATIONAL AIRPORT" instead of using house number &amp; street address.  Other examples are Grand Central Terminal, Brooklyn Navy Yard, Central Terminal Area)
+     </li>
+    </ul>
+   </li>
+   <li>
+    NO STREETNAME
+    <ul>
+     <li>
+      No entry for street name
+     </li>
+    </ul>
+   </li>
+   <li>
+    SPELLCHECKED WITH NO CHANGE
+    <ul>
+     <li>
+      Misspellings or runalong of Prominent Places (BROOKLYNNAVALYARD, CENTRALTERMINALAREA)
+     </li>
+     <li>
+      Abbreviated Spelling of Prominent Places (CTRLTERMAREA)
+     </li>
+    </ul>
+   </li>
+   <li>
+    STREET(S) NOT FOUND; NOT ELIGIBLE FOR SPELLCHECK
+    <ul>
+     <li>
+      Most errors have # in the address. Usually of the type "[space]#[space]"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <p>
+   <b>
+    Potential Improvement for failed addresses
+   </b>
+  </p>
+  <p>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     Big Picture:
+    </b>
+   </li>
+  </undefined>
+  <p>
+   Many addresses that failed to geocode have a street name and number (with no suffix) and zip/borough codes that are missing or wrong. Some of these addresses have street numbers and names that are unique to one location in New York City. Using a decision tree, the corresponding zip codes can be logically imputed, allowing the addresses to be geocoded.
+  </p>
+  <p>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     How to Fix Streets with no Suffix:
+    </b>
+   </li>
+  </undefined>
+  <p>
+   1) If address has a number and name, but no suffix (e.g. 123 Smith), check for candidate matches in the Melissa dataset (see melissa_addresses.csv on DropBox). Example: The source record in question has an address of 123 Smith. We would check the Melissa dataset for 123 Smith Ave, 123 Smith St., etc.
+  </p>
+  <p>
+   2) If there is no match for the number and street in Melissa, reject the source record.
+  </p>
+  <p>
+   3) If there is a unique match for that number and street in Melissa, use the address and zip code of the matching record in Melissa.
+  </p>
+  <p>
+   4) If there is more than one match, we will use the source record’s zip code to try and find the best match. Each potential match in Melissa is called a ‘candidate’. If the source record zip code matches only 1 candidate record zip code, use the candidate record’s address and zip code. If there are 0 or greater than 2 candidate records that have the source record’s zip code, reject the source record.
+  </p>
+  <p>
+  </p>
+  <undefined>
+   <li>
+    <b>
+     Thoughts on Implementation:
+    </b>
+    (we tried, sorry :/ )
+   </li>
+  </undefined>
+  <p>
+   The current parser requires an observation to have a borough in order to match a street address. It finds the borough using the reported zip code, city, or borough (if available). If only street number and name are reported, then the address can’t be geocoded. By implementing the logic described above (and below!) in the getBoros() function in the GeoMatcher class, the parser will be able to determine the borough, allowing the address to be geocoded.
+  </p>
+  <p>
+  </p>
+  <p>
+   The linked melissa_addresses.csv file needs to have the parser.StreetCleaner applied. Then if the count of the matches of the given street name and number and the Melissa file is 1, then use the information in the Melissa observation to determine the borough.
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Proposed Logic for Parsing Street Address:
+   </b>
+  </p>
+  <p>
+   <img src="https://hackpad-attachments.s3.amazonaws.com/hackpad.com_0EILyEuUj1j_p.86520_1384641545374_Screen%20Shot%202013-11-16%20at%205.38.41%20PM.png"/>
+  </p>
+  <p>
+  </p>
+  <p>
+   <b>
+    Skype Chat Transcript as of 20:25 Saturday
+   </b>
+  </p>
+  <p>
+   [11/16/13, 11:47:40 AM] Vladimir Dubovskiy: Vladimir Dubovskiy added Tim to this conversation
+  </p>
+  <p>
+   [11/16/13, 11:47:51 AM] Vladimir Dubovskiy: Vladimir Dubovskiy added 茜 陈 to this conversation
+  </p>
+  <p>
+   [11/16/13, 11:47:57 AM] Vladimir Dubovskiy: OK!
+  </p>
+  <p>
+   [11/16/13, 11:48:12 AM] Vladimir Dubovskiy: We’ve got 9 people in
+  </p>
+  <p>
+   [11/16/13, 11:48:17 AM] Vladimir Dubovskiy: 5 more coming soon
+  </p>
+  <p>
+   [11/16/13, 11:48:24 AM] Vladimir Dubovskiy: chat’s from hangouts
+  </p>
+  <p>
+   [11/16/13, 11:48:38 AM] Vladimir Dubovskiy: What is the full path of the file to geocode?
+  </p>
+  <p>
+   Geocoder/test_DataIntersections.csv
+  </p>
+  <p>
+   Do you want to create a new file with the output? Enter the full path of the new file to create:
+  </p>
+  <p>
+   Geocoder/bip.csv
+  </p>
+  <p>
+   What is the delimiter for the input file?
+  </p>
+  <p>
+   ,
+  </p>
+  <p>
+   Which variable has the building number for the address?
+  </p>
+  <p>
+   Street1
+  </p>
+  <p>
+   Which variable has the street name for the address? (Can be the same column as building number)
+  </p>
+  <p>
+   Street2
+  </p>
+  <p>
+   Is there a ZIP code variable? Enter it here, otherwise blank:
+  </p>
+  <p>
+  </p>
+  <p>
+   Is there a standardized BORO code/name variable? Enter it here, otherwise blank:
+  </p>
+  <p>
+   Borough
+  </p>
+  <p>
+   Is there a neighborhood/town/city variable? Enter it here, otherwise blank:
+  </p>
+  <p>
+  </p>
+  <p>
+   House number var: Street1
+  </p>
+  <p>
+   Street name var: Street2
+  </p>
+  <p>
+   BORO var: Borough
+  </p>
+  <p>
+   Loading data...
+  </p>
+  <p>
+   Geocode in progress...
+  </p>
+  <p>
+   8.2% were matched to valid geographic locations
+  </p>
+  <p>
+   97.4% were matched to valid feature names
+  </p>
+  <p>
+   8.2% were matched to X-Y coordinates
+  </p>
+  <p>
+   8.2% were matched to BINs
+  </p>
+  <p>
+   8.1% were matched to BBLs
+  </p>
+  <p>
+   Geocode completed after 1.8 minutes.
+  </p>
+  <p>
+   [11/16/13, 11:48:38 AM] Tim: Here we are
+  </p>
+  <p>
+   [11/16/13, 11:49:06 AM] Vladimir Dubovskiy: I tried it on bk13v1.csv; ran out of memory-heap.  Now trying to run it on test_GoodTestDataManyColumns.csv, but still trying to identify how to tell Geocoder where the street name, building number, etc. are
+  </p>
+  <p>
+   [11/16/13, 11:49:18 AM] Vladimir Dubovskiy: @Jim is setting up github
+  </p>
+  <p>
+   [11/16/13, 11:51:54 AM] Jim Steinberger: To clarify what Vlad pasted: those are two sample runs.  Both runs are the result of running "java Geocoder/Geocode" from the command-line.  You type in the filenames, and tell it which columns to find what data
+  </p>
+  <p>
+   [11/16/13, 11:52:24 AM] Jim Steinberger: I’m working on getting the Java code in GitHub so we can track any tweaks/changes to the original Java
+  </p>
+  <p>
+   [11/16/13, 11:53:56 AM] Vladimir Dubovskiy: Vladimir Dubovskiy added Sohaib Hasan to this conversation
+  </p>
+  <p>
+   [11/16/13, 11:54:45 AM] Jim Steinberger: Hey -- does anyone want commit-access to the GitHub repo?
+  </p>
+  <p>
+   [11/16/13, 11:55:13 AM] Jim Steinberger: Talk to the guy in the black shirt sitting to my left.  I am in the midwest blue plaid shirt :P
+  </p>
+  <p>
+   [11/16/13, 11:57:11 AM] Vladimir Dubovskiy: Vladimir Dubovskiy added da.anderson, Shannon Lauricella to this conversation
+  </p>
+  <p>
+   [11/16/13, 11:57:45 AM] Vladimir Dubovskiy: Two more people joined: Shannon and Dave
+  </p>
+  <p>
+   [11/16/13, 11:57:54 AM] Vladimir Dubovskiy: see some info in the treads above
+  </p>
+  <p>
+   [11/16/13, 11:58:29 AM] Vladimir Dubovskiy: Casey, Jim ... anybody else got geocode to run?
+  </p>
+  <p>
+   [11/16/13, 11:58:30 AM] Jim Steinberger: Our GitHub repo:
+   <a href="https://github.com/datakind/moda">
+   </a>
+   <a href="https://github.com/datakind/moda">
+   </a>
+   https://github.com/datakind/moda
+  </p>
+  <p>
+  </p>
+  <p>
+   I added "geocode", which contains our Java code from the JAR file (not the data sets)
+  </p>
+  <p>
+   [11/16/13, 11:59:52 AM] Vladimir Dubovskiy: Vladimir Dubovskiy added mikael_commune to this conversation
+  </p>
+  <p>
+   [11/16/13, 12:00:08 PM] Vladimir Dubovskiy: Welcome to Mikael and Ivan
+  </p>
+  <p>
+   [11/16/13, 12:01:31 PM] Jim Steinberger: From Casey/Jim: The default memory of a Java process is not enough to process many of our datasets.  You’ll need to give Java more memory.  If you’re running from the command-line, it’ll look like: "java -Xmx1024M Geocoder/Geocode".  if you’re in Eclipse, go to Run -&gt; Run Configurations, and add "-Xmx1024M" to the "VM Arguments" box on the "Arguments" tab
+  </p>
+  <p>
+   [11/16/13, 12:04:47 PM] Vladimir Dubovskiy: welcome to David
+  </p>
+  <p>
+   [11/16/13, 12:05:49 PM] Vladimir Dubovskiy: Vladimir Dubovskiy added casey webb to this conversation
+  </p>
+  <p>
+   [11/16/13, 12:05:55 PM] Vladimir Dubovskiy: And welcome to Casey
+  </p>
+  <p>
+   [11/16/13, 12:07:30 PM] Jim Steinberger: RE: GitHub: if you’re planning on making changes to the Java code, or consuming the changes made by others on the team, you’ll want to clone the GitHub project and work with those Java files instead of the unzipped JAR from this morning.  If you have changes to share but don’t want to set git/github up, I’m happy to push changes up for you if you send them to me.
+  </p>
+  <p>
+   [11/16/13, 12:07:53 PM] Tim: Sweet Thx Jim
+  </p>
+  <p>
+   [11/16/13, 12:17:27 PM] Jim Steinberger: To run from command-line:
+  </p>
+  <p>
+   1) Be in the root-directory of the folder (the folder that contains "Geocoder" and "Parser"
+  </p>
+  <p>
+   2) Type "ant" and hit ENTER -- (you’ll need to have Ant installed if you don’t) -- this will build the project.
+  </p>
+  <p>
+   3) "java -Xmx1024M Geocoder/Geocode"
+  </p>
+  <p>
+   [11/16/13, 12:21:00 PM] Vladimir Dubovskiy: Thanks Jim. If you don’t have "ant" you can install it using:
+  </p>
+  <p>
+   brew update
+  </p>
+  <p>
+   brew install ant
+  </p>
+  <p>
+   [11/16/13, 12:26:25 PM] Vladimir Dubovskiy: Vladimir Dubovskiy added Lauran Epstein to this conversation
+  </p>
+  <p>
+   [11/16/13, 12:38:43 PM] Vladimir Dubovskiy: I ran BAD_BADBADBAD_data file with these params:
+  </p>
+  <p>
+   [11/16/13, 12:38:44 PM] Vladimir Dubovskiy: House number var: address
+  </p>
+  <p>
+   Street name var: Street_Name
+  </p>
+  <p>
+   BORO var: boro
+  </p>
+  <p>
+   [11/16/13, 12:39:51 PM] Vladimir Dubovskiy: Aida, are you getting this error for bad data or something else?
+  </p>
+  <p>
+   [11/16/13, 12:39:51 PM] Vladimir Dubovskiy: Exception in thread "main" java.lang.NumberFormatException: For input string: "7182788529"
+  </p>
+  <p>
+   at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+  </p>
+  <p>
+   at java.lang.Integer.parseInt(Integer.java:461)
+  </p>
+  <p>
+   at java.lang.Integer.parseInt(Integer.java:499)
+  </p>
+  <p>
+   at Geocoder.GeoMatcher.getBoros(GeoMatcher.java:91)
+  </p>
+  <p>
+   at Geocoder.Geocode.&lt;init&gt;(Geocode.java:134)
+  </p>
+  <p>
+   at Geocoder.Geocode.main(Geocode.java:283)
+  </p>
+  <p>
+   [11/16/13, 12:47:08 PM] Vladimir Dubovskiy: Ok, talked to Aida, here’s the error:
+  </p>
+  <p>
+   [11/16/13, 12:47:09 PM] Vladimir Dubovskiy: House number var: address
+  </p>
+  <p>
+   Street name var: address
+  </p>
+  <p>
+   BORO var: boro
+  </p>
+  <p>
+   Loading data...
+  </p>
+  <p>
+   Geocode in progress...
+  </p>
+  <p>
+   Exception in thread "main" java.lang.NumberFormatException: For input string: "7182788529"
+  </p>
+  <p>
+   at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+  </p>
+  <p>
+   at java.lang.Integer.parseInt(Integer.java:461)
+  </p>
+  <p>
+   at java.lang.Integer.parseInt(Integer.java:499)
+  </p>
+  <p>
+   at Geocoder.GeoMatcher.getBoros(GeoMatcher.java:91)
+  </p>
+  <p>
+   at Geocoder.Geocode.&lt;init&gt;(Geocode.java:134)
+  </p>
+  <p>
+   at Geocoder.Geocode.main(Geocode.java:283)
+  </p>
+  <p>
+   [11/16/13, 12:47:28 PM] Vladimir Dubovskiy: if we strip all columns but keep address/boro, it will succeed at geocoding
+  </p>
+  <p>
+   [11/16/13, 12:50:25 PM] Vladimir Dubovskiy: Vladimir Dubovskiy added Aida  Shoydokova to this conversation
+  </p>
+  <p>
+   [11/16/13, 12:50:43 PM] Vladimir Dubovskiy: welcome Aida
+  </p>
+  <p>
+   [11/16/13, 12:57:18 PM] burlivo: hey all, ManyColumns.csv file has x_cord and y_cord coords which are ’real’ x and y coords. Try to geocode addresses and get new x and y and compare against ’real’ones and figure out why some of ’new’ x and y are far away from ’real’ ones
+  </p>
+  <p>
+   [11/16/13, 12:58:35 PM] Vladimir Dubovskiy: ManyColumns.csv that Aida is referring to is zipped inside Test Data/test_BAD_BADBADBADBAD_DATA_ManyColumns
+  </p>
+  <p>
+   [11/16/13, 12:58:50 PM] burlivo: you can calculate distance between x and y like this: sqrt((x1-x2)^2 + (y1-y2)^2) - euclidean distance
+  </p>
+  <p>
+   [11/16/13, 1:07:21 PM] Aida  Shoydokova: forgot to add ’real’ x and y should be divided on 10 before comparisons
+  </p>
+  <p>
+   [11/16/13, 1:08:34 PM] Jim Steinberger: Makes sense -- the max integer value in Java is "2147483647" (less than "7182788529"); we have to parse that as a long or ignore it.  working on it.
+  </p>
+  <p>
+   [11/16/13, 1:19:45 PM] Aida  Shoydokova: cool
+  </p>
+  <p>
+   [11/16/13, 1:46:32 PM] Vladimir Dubovskiy: Vladimir Dubovskiy added Melanie Petsch to this conversation
+  </p>
+  <p>
+   [11/16/13, 1:46:49 PM] Vladimir Dubovskiy: fyi for those who recently joined
+  </p>
+  <p>
+   [11/16/13, 1:46:49 PM] Vladimir Dubovskiy: [11/16/13, 12:17:27 PM] Jim Steinberger: To run from command-line:
+  </p>
+  <p>
+   1) Be in the root-directory of the folder (the folder that contains "Geocoder" and "Parser"
+  </p>
+  <p>
+   2) Type "ant" and hit ENTER -- (you’ll need to have Ant installed if you don’t) -- this will build the project.
+  </p>
+  <p>
+   3) "java -Xmx1024M Geocoder/Geocode"
+  </p>
+  <p>
+   [11/16/13, 12:21:00 PM] Vladimir Dubovskiy: Thanks Jim. If you don’t have "ant" you can install it using:
+  </p>
+  <p>
+   brew update
+  </p>
+  <p>
+   brew install ant
+  </p>
+  <p>
+   [11/16/13, 1:51:48 PM] casey webb: I got the build to work but when I try running the file I get the following error:
+  </p>
+  <p>
+   [11/16/13, 1:51:54 PM] casey webb: House number var: addr
+  </p>
+  <p>
+   Street name var: addr
+  </p>
+  <p>
+   ZIP var: ZIP
+  </p>
+  <p>
+   Loading data...
+  </p>
+  <p>
+   Could not open /Geocoder/valid_addresses_.csv
+  </p>
+  <p>
+   Exception in thread "main" java.lang.NullPointerException
+  </p>
+  <p>
+   [11/16/13, 1:52:29 PM] casey webb: When I look at what I get from git vs what is in the file I extracted, it looks like there are some cdv files that are missing in the geocoded folder, possible the just didn’t get added to git?
+  </p>
+  <p>
+   [11/16/13, 1:52:39 PM] Tim: Yes you are right
+  </p>
+  <p>
+   [11/16/13, 1:52:55 PM] Jim Steinberger: I deliberately left those out to cut down on our data-usage at GitHub -- you’ll need to copy those in from the JAR
+  </p>
+  <p>
+   [11/16/13, 1:52:58 PM] Tim: The Git has the reference data stripped out to keep the size down
+  </p>
+  <p>
+   [11/16/13, 1:53:04 PM] Jim Steinberger: They’re also gitignored so you won’t be able to commit them
+  </p>
+  <p>
+   [11/16/13, 1:53:09 PM] casey webb: ahhh thx!
+  </p>
+  <p>
+   [11/16/13, 2:00:10 PM] Aida  Shoydokova: hey Jim, probably you can code geocoder, so it could have excel files as inputes? to get rid of cvs and comma problem?
+  </p>
+  <p>
+   [11/16/13, 2:01:30 PM] Jim Steinberger: I’m working on replacing the hand-written parsing code with
+   <a href="https://code.google.com/p/jcsv/">
+   </a>
+   <a href="https://code.google.com/p/jcsv/">
+   </a>
+   https://code.google.com/p/jcsv/ -- that should make Geocoder’s comma-handling behavior as robust as Excel’s
+  </p>
+  <p>
+   [11/16/13, 2:07:21 PM] Jim Steinberger: General FYI to keep in mind with your data sets: Geocoder does not currently handle commas correctly.  If you have a column with "Lastname, Firstname" in it, Geocoder will interpret that as two columns, rather than 1.  Which means it’s possible it’s loading the wrong address/boro information for lines that have that issue.  What you’d see is either: 1) Geocoder will crash because of a parsing error, or 2) Geocoder will silently move on to the next address-line, and will think that it’s skipping a bad address when in fact it may have been a good one.
+  </p>
+  <p>
+   [11/16/13, 2:10:22 PM] Ivan Zalamea: Ivan Zalamea added Daniel Gabrieli to this conversation
+  </p>
+  <p>
+   [11/16/13, 2:10:49 PM] Ivan Zalamea: welcome daniel
+  </p>
+  <p>
+   [11/16/13, 2:11:21 PM] daniel.gabrieli: hey team
+  </p>
+  <p>
+   [11/16/13, 2:24:31 PM] Tim: Yo
+  </p>
+  <p>
+   [11/16/13, 2:24:52 PM] Tim: Vald and I have to go to a meeting at 2:30 and will be right back.
+  </p>
+  <p>
+   [11/16/13, 2:26:39 PM] Vladimir Dubovskiy: mtg with Jake and DK team, just 10-25 mins
+  </p>
+  <p>
+   [11/16/13, 2:46:05 PM] Daniel Gabrieli: One running hypothesis is that if the zip code does not exist in the Borough specified, geocoder will fail.  Additionally, we believe the file bad_queens.csv has many incogruent zip codes... meaning that even though "Queens" was specifed as the borough the zip code is actually for Brooklyn, or another borough that is not queens.  We think this breaks the logic of the program
+  </p>
+  <p>
+   [11/16/13, 2:46:59 PM] Daniel Gabrieli: also, we think as a last resort, we can use the Google Maps API to request information for address that don’t work in the geocoder
+  </p>
+  <p>
+   [11/16/13, 2:52:22 PM] Vladimir Dubovskiy: the idea of google maps is great, but I got feedback from MODA multiple times that it might not be helpful. The way google parses addresses and gets lat/long for addresses will most certainly be off from the way MODA records addresses and links them to X,Y
+  </p>
+  <p>
+   [11/16/13, 2:52:48 PM] Vladimir Dubovskiy: in that Queens dataset, what % of records have a bogus zip code?
+  </p>
+  <p>
+   [11/16/13, 2:52:57 PM] Vladimir Dubovskiy: what if you run geocoder without specifying zip?
+  </p>
+  <p>
+   [11/16/13, 2:53:13 PM] da.anderson: does anyone know what b7sc is?
+  </p>
+  <p>
+   [11/16/13, 2:53:21 PM] da.anderson: as in the reference file stname_b7sc.csv
+  </p>
+  <p>
+   [11/16/13, 2:53:33 PM] Vladimir Dubovskiy: can it be that address names are still right, even if zips are wrong?
+  </p>
+  <p>
+   [11/16/13, 3:16:33 PM] Vladimir Dubovskiy: sent a file melissa_5k.csv to this group
+  </p>
+  <p>
+   [11/16/13, 3:17:21 PM] Jeff Wenzinger: Vlad - yes, we think that is a common error that is classified as "ADDRESS OUT OF RANGE BY MORE THAN 4"
+  </p>
+  <p>
+   [11/16/13, 3:17:25 PM] Vladimir Dubovskiy: this is a short version of melissa, in case you want to test it in excel and be able to load it in
+  </p>
+  <p>
+   [11/16/13, 3:17:43 PM] Jeff Wenzinger: (because it is looking in the wrong borough/ZIP for the address, it returns an error)
+  </p>
+  <p>
+   [11/16/13, 3:22:17 PM] Jim Steinberger: Aida/Vlad: Does this look like the correct result for ManyColumns.csv?
+  </p>
+  <p>
+  </p>
+  <p>
+   94.1% were matched to valid geographic locations
+  </p>
+  <p>
+   98.4% were matched to valid feature names
+  </p>
+  <p>
+   94.1% were matched to X-Y coordinates
+  </p>
+  <p>
+   76.9% were matched to BINs
+  </p>
+  <p>
+   76.6% were matched to BBLs
+  </p>
+  <p>
+   [11/16/13, 3:30:02 PM] Aida  Shoydokova: hey Tim, just sent you SAS data sets, could you drop them on the dropbox?
+  </p>
+  <p>
+   [11/16/13, 3:33:34 PM] Vladimir Dubovskiy: @Jim. Checking.
+  </p>
+  <p>
+   [11/16/13, 3:34:03 PM] Vladimir Dubovskiy: Congrats on getting the geocoder to work, Jim
+  </p>
+  <p>
+   [11/16/13, 3:36:09 PM] Vladimir Dubovskiy: @Tim, we need to talk more about "adding more reference data" to geocoder.
+  </p>
+  <p>
+   [11/16/13, 3:37:27 PM] Aida  Shoydokova: yes, the results look right
+  </p>
+  <p>
+   [11/16/13, 3:43:10 PM] Jim Steinberger: Awesome, thanks -- fix pushed to GitHub (
+   <a href="https://github.com/datakind/moda/commit/1b3359d23190b3deea0d4da6ae1d0dc230a23173">
+   </a>
+   <a href="https://github.com/datakind/moda/commit/1b3359d23190b3deea0d4da6ae1d0dc230a23173">
+   </a>
+   https://github.com/datakind/moda/commit/1b3359d23190b3deea0d4da6ae1d0dc230a23173 )
+  </p>
+  <p>
+   [11/16/13, 3:46:37 PM] Vladimir Dubovskiy: Aida, does this look right for Melissa? I just ran it on 5k rows for Queens
+  </p>
+  <p>
+   [11/16/13, 3:46:38 PM] Vladimir Dubovskiy: House number var: address
+  </p>
+  <p>
+   Street name var: address
+  </p>
+  <p>
+   ZIP var: zip
+  </p>
+  <p>
+   BORO var: parsed_boro
+  </p>
+  <p>
+   Town/City/Neighborhood var: City
+  </p>
+  <p>
+   Loading data...
+  </p>
+  <p>
+   Geocode in progress...
+  </p>
+  <p>
+   10.9% were matched to valid geographic locations
+  </p>
+  <p>
+   34.9% were matched to valid feature names
+  </p>
+  <p>
+   10.9% were matched to X-Y coordinates
+  </p>
+  <p>
+   10.9% were matched to BINs
+  </p>
+  <p>
+   10.9% were matched to BBLs
+  </p>
+  <p>
+   Geocode completed after 1.0 minutes.
+  </p>
+  <p>
+   [11/16/13, 3:48:01 PM] Aida  Shoydokova: wow, that’s really bad rate. In my understanding Mellissa should have good valid addresses
+  </p>
+  <p>
+   [11/16/13, 3:48:16 PM] Aida  Shoydokova: the rate should be more than 90%
+  </p>
+  <p>
+   [11/16/13, 3:48:32 PM] Vladimir Dubovskiy: am I using the right fields?
+  </p>
+  <p>
+   [11/16/13, 3:48:55 PM] Aida  Shoydokova: you can give Queens Mellissa as bad data to debud the geocoder
+  </p>
+  <p>
+   [11/16/13, 3:49:02 PM] Aida  Shoydokova: i think so
+  </p>
+  <p>
+   [11/16/13, 3:50:28 PM] Jim Steinberger: I’m gonna move on code-cleanup / documentation, and maybe some automated tests.  If anyone wants an explanation of some aspect/module of the code, lemme know and I’m happy to do a deep-dive on it and get you an English translation
+  </p>
+  <p>
+   [11/16/13, 3:53:20 PM] Vladimir Dubovskiy: @Jim. Taking @Aida’s suggestion above.
+  </p>
+  <p>
+   [11/16/13, 3:53:35 PM] Vladimir Dubovskiy: let’s talk about bad queens data
+  </p>
+  <p>
+   [11/16/13, 3:55:31 PM] Jim Steinberger: Would it be helpful for Geocoder to output a file of all the addresses it failed on and why?  (it’s not doing that now, I assume?)
+  </p>
+  <p>
+   [11/16/13, 4:04:26 PM] Vladimir Dubovskiy: Yes @Jim, that would be super helpful!
+  </p>
+  <p>
+   [11/16/13, 4:09:53 PM] Jim Steinberger: okie I’ll work on that with the melissa dataset
+  </p>
+  <p>
+   [11/16/13, 4:15:01 PM] Vladimir Dubovskiy: trying updated geocoder by Jim to melissa data
+  </p>
+  <p>
+   [11/16/13, 4:15:18 PM] Jim Steinberger: ( I didn’t see any commas in your 5k melissa )
+  </p>
+  <p>
+   [11/16/13, 4:16:10 PM] Vladimir Dubovskiy: you mean this one:
+   <a href="https://www.dropbox.com/s/p8k9j0l9j6mm1da/melissa_5k_queens.csv">
+   </a>
+   <a href="https://www.dropbox.com/s/p8k9j0l9j6mm1da/melissa_5k_queens.csv">
+   </a>
+   https://www.dropbox.com/s/p8k9j0l9j6mm1da/melissa_5k_queens.csv Yea, it’s got commas
+  </p>
+  <p>
+   [11/16/13, 4:16:33 PM] casey webb: peeps we are working on the case where people enter only a street name and number and nothing else
+  </p>
+  <p>
+   [11/16/13, 4:16:36 PM] Jim Steinberger: melissa_5k.csv
+  </p>
+  <p>
+   [11/16/13, 4:17:00 PM] Vladimir Dubovskiy: @Casey - glorious
+  </p>
+  <p>
+   [11/16/13, 4:19:48 PM] Vladimir Dubovskiy: @Jim: ant build errors with new code. "import com.googlecode.jcsv.CSVStrategy;" know how to install libraries?
+  </p>
+  <p>
+   [11/16/13, 4:20:16 PM] Vladimir Dubovskiy: not a java-buff...
+  </p>
+  <p>
+   [11/16/13, 4:20:17 PM] Jim Steinberger: Oh.  Classpath issue -- in Eclipse it’ll be fine, but gotta adjust build.xml for command-line.  Gimme 3min
+  </p>
+  <p>
+   [11/16/13, 4:20:27 PM] Vladimir Dubovskiy: ok.
+  </p>
+  <p>
+   [11/16/13, 4:22:53 PM] Jim Steinberger: Okie that should be fixed in GitHub.
+  </p>
+  <p>
+   [11/16/13, 4:25:22 PM] Vladimir Dubovskiy: Exception in thread "main" java.lang.NoClassDefFoundError: com/googlecode/jcsv/reader/CSVEntryParser
+  </p>
+  <p>
+   Caused by: java.lang.ClassNotFoundException: com.googlecode.jcsv.reader.CSVEntryParser
+  </p>
+  <p>
+   at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+  </p>
+  <p>
+   at java.security.AccessController.doPrivileged(Native Method)
+  </p>
+  <p>
+   at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+  </p>
+  <p>
+   at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+  </p>
+  <p>
+   at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+  </p>
+  <p>
+   at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+  </p>
+  <p>
+   [11/16/13, 4:25:28 PM] Vladimir Dubovskiy: ant was successful
+  </p>
+  <p>
+   [11/16/13, 4:27:51 PM] Jim Steinberger: sorry for the longer command, but:  java -Xmx1024M -classpath .:./lib/jcsv-1.4.0.jar Geocoder.Geocode
+  </p>
+  <p>
+   [11/16/13, 4:28:14 PM] Vladimir Dubovskiy: nice
+  </p>
+  <p>
+   [11/16/13, 4:29:18 PM] Jim Steinberger: General warning/clarification: When it says "Do you want to create a new file with the output?", it means "or else would you like me to overwrite your original input file with the output"
+  </p>
+  <p>
+   [11/16/13, 4:29:35 PM] Tim: Great note!
+  </p>
+  <p>
+   [11/16/13, 4:29:39 PM] Tim: Thank you.
+  </p>
+  <p>
+   [11/16/13, 4:29:41 PM] Vladimir Dubovskiy: @Jim
+  </p>
+  <p>
+   [11/16/13, 4:29:42 PM] Vladimir Dubovskiy: Loading data...
+  </p>
+  <p>
+   Exception in thread "main" java.lang.NullPointerException
+  </p>
+  <p>
+   at Parser.DataLookup.varNum(DataLookup.java:69)
+  </p>
+  <p>
+   at Parser.DataLookup.KeyLookup(DataLookup.java:155)
+  </p>
+  <p>
+   at Parser.DataLookup.KeyLookup(DataLookup.java:275)
+  </p>
+  <p>
+   at Geocoder.GeoMatcher.&lt;init&gt;(GeoMatcher.java:21)
+  </p>
+  <p>
+   at Geocoder.Geocode.&lt;init&gt;(Geocode.java:123)
+  </p>
+  <p>
+   at Geocoder.Geocode.main(Geocode.java:315)
+  </p>
+  <p>
+   [11/16/13, 4:29:49 PM] Vladimir Dubovskiy: after all th einputs
+  </p>
+  <p>
+   [11/16/13, 4:30:42 PM] Aida  Shoydokova: cool, thanks, guys for your help and time!
+  </p>
+  <p>
+   [11/16/13, 4:30:44 PM] Jim Steinberger: Vlad, that means the file path you entered doesn’t match a file
+  </p>
+  <p>
+   [11/16/13, 4:32:29 PM] Aida  Shoydokova: also, if somebody is interested in working at the Mayor’s office and analysing data, we have a job opening: junior analyst
+  </p>
+  <p>
+   [11/16/13, 4:54:03 PM] Jim Steinberger: This message has been removed.
+  </p>
+  <p>
+   [11/16/13, 5:06:08 PM] Jim Steinberger: Time saver, everyone: you can specify all the inputs as program arguments via the command-line and take the tedious interactivity out of it:
+  </p>
+  <p>
+  </p>
+  <p>
+   java -Xmx1024m Geocoder.Geocode melissa_5k.csv outputFile , address address Zip parsed_boro City
+  </p>
+  <p>
+  </p>
+  <p>
+   Use empty quotes for what you’re not specifying:
+  </p>
+  <p>
+  </p>
+  <p>
+   java -Xmx1024m Geocoder.Geocode melissa_5k.csv output , address address ’’ ’’ ’’
+  </p>
+  <p>
+   [11/16/13, 5:11:02 PM] Vladimir Dubovskiy: cool
+  </p>
+  <p>
+   [11/16/13, 5:11:10 PM] Jim Steinberger: Also, reminder: the reference CSV files are /not/ in GitHub, so if you check the project out, remember to copy the CSV files from the JAR from this morning, or you’ll get the exception Vlad did ;)
+  </p>
+  <p>
+   [11/16/13, 5:14:30 PM] Vladimir Dubovskiy: I’m actually running
+  </p>
+  <p>
+   [11/16/13, 5:14:30 PM] Vladimir Dubovskiy: java -Xmx1024m -classpath .:./lib/jcsv-1.4.0.jar Geocoder.Geocode melissa_5k.csv output , address address Zip parsed_boro City
+  </p>
+  <p>
+   [11/16/13, 6:33:50 PM] Sohaib Hasan: guys, one thing i should have mentioned, melissa also has a chunk of addresses that fall outside of new york city and, if i remember correctly, they are located at the top of the dataset. things that have a county of nassau fall outside and so do not geocode
+  </p>
+  <p>
+   [11/16/13, 6:34:14 PM] Sohaib Hasan: that may mess up if the melissa 5k is the top 5k rows and not a random sample of row
+  </p>
+  <p>
+   [11/16/13, 6:34:15 PM] Sohaib Hasan: s
+  </p>
+  <p>
+   [11/16/13, 6:34:35 PM] Sohaib Hasan: but overall, looking over the hack pad and talking to Aida, it looks like you guys are doing some incredible work
+  </p>
+  <p>
+   [11/16/13, 6:41:02 PM] Tim: Sohaib, I also stripped out the names from Melissa and updated the dropbox with this "clean" data. No worries there
+  </p>
+  <p>
+   [11/16/13, 6:48:21 PM] Vladimir Dubovskiy: Sohaib, that is so helpful
+  </p>
+  <p>
+   [11/16/13, 6:48:22 PM] Vladimir Dubovskiy: thank you
+  </p>
+  <p>
+   [11/16/13, 6:51:27 PM] Vladimir Dubovskiy: CONGRATS
+  </p>
+  <p>
+   [11/16/13, 6:51:34 PM] Vladimir Dubovskiy: Melissa - 100% match
+  </p>
+  <p>
+   [11/16/13, 6:51:39 PM] Vladimir Dubovskiy: sometimes 99.9%
+  </p>
+  <p>
+   [11/16/13, 6:52:18 PM] Vladimir Dubovskiy: but that’s expected.
+  </p>
+  <p>
+   [11/16/13, 6:53:06 PM] Sohaib Hasan: much appreciated, tim. and that is great. i think i had 96-97% when we first got the data, excluding the nassau things
+  </p>
+  <p>
+   [11/16/13, 6:54:04 PM] Vladimir Dubovskiy: that might be attributed to Jim fixing file loading function that now handles comma escapes properly (yep, old geocoder didn’t load files in properly :)
+  </p>
+  <p>
+   [11/16/13, 6:54:31 PM] Vladimir Dubovskiy: Geocode in progress...
+  </p>
+  <p>
+   99.9% were matched to valid geographic locations
+  </p>
+  <p>
+   100.0% were matched to valid feature names
+  </p>
+  <p>
+   99.9% were matched to X-Y coordinates
+  </p>
+  <p>
+   99.9% were matched to BINs
+  </p>
+  <p>
+   99.9% were matched to BBLs
+  </p>
+  <p>
+   Geocode completed after .8 minutes.
+  </p>
+  <p>
+   [11/16/13, 6:54:31 PM] Vladimir Dubovskiy: Just a happy dance:
+  </p>
+  <p>
+   [11/16/13, 7:40:09 PM] Vladimir Dubovskiy: Could you ask Vivian to add docs to hackpad on how to fire you ruby script and how to use it?
+  </p>
+  <p>
+   [11/16/13, 7:54:22 PM] Tim: Ok I will. here computer is still here so she will be back.
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+ </body>
+</html>
+

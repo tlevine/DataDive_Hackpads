@@ -1,0 +1,7 @@
+<html>
+ <body>
+  <p>
+   {"success":false,"error":"Invalid request signature."}
+  </p>
+ </body>
+</html>
