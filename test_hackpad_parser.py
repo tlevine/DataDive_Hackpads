@@ -10,4 +10,5 @@ expected = json.load(open(os.path.join('Fixtures','moda.json')))
 
 def test_overview():
 	observed = h.overview(source_html)
+	print observed
 	n.assert_equal(observed, expected['overview'])
