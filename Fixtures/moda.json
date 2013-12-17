@@ -1,0 +1,35 @@
+{
+	"overview":"",
+	"contacts":{
+		"ngo":[{"name":"","position":"","email address":""}],
+		"ambassadors":[],
+		"volunteers":[]
+	},
+	"challenges":[""],
+	"methods":[
+		{"title":"Pretty map", "description":"ljdsflkjdsfljk"}
+	],
+	"datasets":[
+		{"title":"geocoder","url":"","description":""}
+	],
+	"code":[
+		{"title":"github","url":"","description":""}
+	],
+	"tool collection":[
+		{"title":"geocoder","url":"","description":""}
+	],
+	"basic descriptions of the data":[{
+		"title":""
+		"text":"",
+		"links":[""],
+		"images":[""]
+	}],
+	"results":[{
+		"title":""
+		"text":"",
+		"links":[""],
+		"images":[""]
+	}],
+	"team communication":[{"title":"geocoder","description":""}],
+	"final presentation":[""],
+}
