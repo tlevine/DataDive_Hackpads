@@ -16,8 +16,9 @@ def parse(filename):
 			'ngo': list(contacts('NGO Representatives', html)),
 			'data_ambassadors': list(contacts('Data Ambassadors', html)),
 			'volunteers': list(contacts('Volunteers', html)),
-			'challenges': challenges(html),
-		}
+		},
+		"challenges": challenges(html),
+
 	}
 
 def contacts(section, html):
@@ -32,8 +33,16 @@ def contacts(section, html):
 		yield dict(zip(keys,values))
 
 def challenges(html):
-	xpath = '//h2[contains(text(),"The Challenge(s)")]/following-sibling::p[position()=1]/text()'
-	return unidecode(html.xpath(xpath)[0].strip())
+	xpath = u'//h2[contains(text(),"The Challenge(s)")]/following-sibling::*'
+	siblings = html.xpath(xpath)
+	challenges = u''
+	for sibling in siblings:
+		if sibling.tag == 'h2':
+			break
+		else:
+			challenges += lxml.html.tostring(sibling)
+	return challenges
+
 
 if __name__ == '__main__':
 	import json
