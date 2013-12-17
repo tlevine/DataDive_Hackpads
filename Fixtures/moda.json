@@ -19,17 +19,17 @@
 		{"title":"geocoder","url":"","description":""}
 	],
 	"basic descriptions of the data":[{
-		"title":""
+		"title":"",
 		"text":"",
 		"links":[""],
 		"images":[""]
 	}],
 	"results":[{
-		"title":""
+		"title":"",
 		"text":"",
 		"links":[""],
 		"images":[""]
 	}],
 	"team communication":[{"title":"geocoder","description":""}],
-	"final presentation":[""],
+	"final presentation":[""]
 }
