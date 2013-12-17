@@ -18,6 +18,8 @@ def parse(filename):
 			'volunteers': list(contacts('Volunteers', html)),
 		},
 		"challenges": challenges(html),
+		# "methods": methods(html),
+		"final presentation": presentation(html),
 
 	}
 
@@ -43,6 +45,27 @@ def challenges(html):
 			challenges += lxml.html.tostring(sibling)
 	return challenges
 
+# def methods(html):
+# 	xpath = u'//h2[contains(text(),"The Method(s)")]/following-sibling::*'
+# 	siblings = html.xpath(xpath)
+# 	methods = u''
+# 	for sibling in siblings:
+# 		if sibling.tag == 'h2':
+# 			break
+# 		else:
+# 			methods += lxml.html.tostring(sibling)
+# 	return methods
+
+def presentation(html):
+	xpath = u'//h2[contains(text(),"Final Presentation")]/following-sibling::*'
+	siblings = html.xpath(xpath)
+	presentation = u''
+	for sibling in siblings:
+		if sibling.tag == 'h2':
+			break
+		else:
+			presentation += lxml.html.tostring(sibling)
+	return presentation
 
 if __name__ == '__main__':
 	import json
