@@ -14,8 +14,37 @@ def parse(filename):
 		"overview": overview(html),
 	}
 
-def contacts(html):
-	pass
+def ngo_contacts(html):
+	'''
+	<h2>
+   Contacts
+  </h2>
+  <p>
+   <b>
+    NGO Representatives
+   </b>
+  </p>
+  <ul>
+   <li>
+    Sohaib Hasan, MODA, shasan2@cityhall.nyc.gov
+   </li>
+   <li>
+    Aida Shoydokova, MODA, analytics1@cityhall.nyc.gov
+   </li>
+  </ul>
+  <p>
+   <b>
+    Data Ambassadors
+   </b>
+  </p>
+  <ul>
+	'''
+	contacts = '//h2[contains(text(),"Contacts")]'
+	ngo = '/following-sibling::p[b[contains(text(),"NGO Representatives")]]'
+	people = '/following-sibling::ul[position()=1]/li/text()'
+	print 88
+	print html.xpath(contacts + ngo + people)
+	return unidecode('')
 
 if __name__ == '__main__':
 	import json

@@ -13,3 +13,7 @@ def test_overview():
 	observed = h.overview(source_html)
 	print observed
 	n.assert_equal(observed, expected['overview'])
+
+def test_ngo_contacts():
+	observed = h.ngo_contacts(source_html)
+	n.assert_equal(observed, expected['contacts']['ngo'])
