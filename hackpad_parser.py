@@ -3,7 +3,7 @@ from unidecode import unidecode
 
 def overview(html):
 	'Given an lxml HTML tree, extract the overview.'
-	xpath = '//h2[position()=2]/following-sibling::p[position()=1]/text()'
+	xpath = '//h2[contains(text(),"Overview")]/following-sibling::p[position()=1]/text()'
 	return unidecode(html.xpath(xpath)[0].strip())
 
 def parse(filename):
@@ -13,6 +13,9 @@ def parse(filename):
 	return {
 		"overview": overview(html),
 	}
+
+def contacts(html):
+	pass
 
 if __name__ == '__main__':
 	import json
