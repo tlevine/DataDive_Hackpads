@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 import nose.tools as n
 import lxml.html
@@ -10,16 +11,15 @@ source_html = lxml.html.fromstring(open(os.path.join('Fixtures','moda.html')).re
 expected = json.load(open(os.path.join('Fixtures','moda.json')))
 
 def test_overview():
-	observed = h.overview(source_html)
-	print observed
-	n.assert_equal(observed, expected['overview'])
+    observed = h.overview(source_html)
+    n.assert_equal(observed, expected['overview'])
 
 def test_ngo_contacts():
-	observed = h.contacts("NGO Representatives", source_html)
-	n.assert_list_equal(list(observed), expected['contacts']['ngo'])
+    observed = h.contacts("NGO Representatives", source_html)
+    n.assert_list_equal(list(observed), expected['contacts']['ngo'])
 
 def test_challenges():
-	observed = h.challenges(source_html)
-	print observed
-	n.assert_equal(observed, expected['challenges'])
+    observed = h.challenges(source_html)
+    n.assert_equal(observed, expected['challenges'])
+
 
