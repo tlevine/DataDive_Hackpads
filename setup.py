@@ -11,8 +11,5 @@ setup(
     packages = ['hackpad'],
     description = 'Parse hackpads from data dives into pretty JSON.',
 #   long_description = open('readme.md').read(),
-    install_requires = [
-        'requests',
-        'nose',
-    ],
+    install_requires = [line.strip() for line in open('requirements.txt')],
 )
