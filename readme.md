@@ -16,4 +16,4 @@ Run tests with nose.
 
     nosetests
 
-We attempt to have this working on both Python 2.7 and Python 3.3.
+This works in both Python 2.7 and Python 3.3.
