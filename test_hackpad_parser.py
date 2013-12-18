@@ -21,5 +21,3 @@ def test_ngo_contacts():
 def test_challenges():
     observed = h.challenges(source_html)
     n.assert_equal(observed, expected['challenges'])
-
-
