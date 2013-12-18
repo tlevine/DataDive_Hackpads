@@ -16,4 +16,7 @@ def parse(filename):
 
 if __name__ == '__main__':
 	import json
-	print json.dumps(parse('Fixtures/moda.html'))
+	print json.dumps(
+            parse('Fixtures/moda.html'),
+            indent = 2, separators = (',', ': ')
+        )
